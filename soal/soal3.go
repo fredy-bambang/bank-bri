@@ -42,6 +42,7 @@ func HighestPalindromeRecursive(
 
 	// fmt.Println("currentIndex: ", currentIndex, "-> ", strArr[currentIndex], ",rightSideIndex: ", len(strArr)-1-currentIndex, "-> ", strArr[len(strArr)-1-currentIndex])
 
+	// menggunakan angka terbesar dari kiri atau kanan
 	rightSideIndex := len(strArr) - 1 - currentIndex
 	if strArr[currentIndex] != strArr[rightSideIndex] {
 		if strArr[currentIndex] > strArr[rightSideIndex] {
@@ -54,6 +55,5 @@ func HighestPalindromeRecursive(
 		return HighestPalindromeRecursive(s, k, strArr, currentIndex, maxLoop)
 	}
 
-	fmt.Println("nga mungkin masuk ke sini")
 	return "-1"
 }
