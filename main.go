@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Println("----------------SOAL 1------------------------")
+	fmt.Println("----------------SOAL 1 Weighted Strings------------------------")
 	// SOAL 1
 	hasilSoal11, _ := soal.WeightedStringMultipliedCompareNumberQuery("abbcccd", []int{1, 3, 9, 8})
 	hasilSoal12, _ := soal.WeightedStringMultipliedCompareNumberQuery("abcd", []int{1, 3, 9, 8})
@@ -16,6 +16,7 @@ func main() {
 	fmt.Println(hasilSoal12)
 	fmt.Println(hasilSoal13)
 
+	fmt.Println("")
 	fmt.Println("----------------SOAL 2------------------------")
 
 	// SOAL 2
@@ -38,8 +39,11 @@ func main() {
 		}
 	}
 
+	fmt.Println("")
 	fmt.Println("----------------SOAL 3------------------------")
 
 	// SOAL 3
-	fmt.Println(soal.HighestPalindromeRecursive("3245678", 10, []string{}, 0, 0))
+	fmt.Println(soal.HighestPalindromeRecursive("3943", 1, []string{}, 0, 0))
+	fmt.Println(soal.HighestPalindromeRecursive("932239", 2, []string{}, 0, 0))
+	fmt.Println(soal.HighestPalindromeRecursive("12345678", 10, []string{}, 0, 0))
 }

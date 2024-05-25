@@ -1,7 +1,6 @@
 package soal
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -32,15 +31,13 @@ func HighestPalindromeRecursive(
 
 		// no need loop all index because of palindrome only need half of the string
 		maxLoop = len(strArr) / 2
-		fmt.Println(maxLoop)
+		// fmt.Println(maxLoop)
 	}
 
 	// kunci stop rekursive buat mengembalikan hasil
 	if currentIndex == maxLoop {
 		return strings.Join(strArr, "")
 	}
-
-	// fmt.Println("currentIndex: ", currentIndex, "-> ", strArr[currentIndex], ",rightSideIndex: ", len(strArr)-1-currentIndex, "-> ", strArr[len(strArr)-1-currentIndex])
 
 	// menggunakan angka terbesar dari kiri atau kanan
 	rightSideIndex := len(strArr) - 1 - currentIndex
@@ -53,6 +50,30 @@ func HighestPalindromeRecursive(
 		currentIndex++
 		k--
 		return HighestPalindromeRecursive(s, k, strArr, currentIndex, maxLoop)
+	}
+
+	if strArr[currentIndex] == strArr[rightSideIndex] {
+		if strArr[currentIndex] == "9" {
+			currentIndex++
+			return HighestPalindromeRecursive(s, k, strArr, currentIndex, maxLoop)
+		}
+
+		// jika hanya mengubah 1 sisi saja, maka palindrom akan gagal
+		if k == 1 {
+			currentIndex++
+			return HighestPalindromeRecursive(s, k, strArr, currentIndex, maxLoop)
+		}
+
+		if k > 0 && k%2 == 0 {
+			strArr[currentIndex] = "9"
+			strArr[rightSideIndex] = "9"
+			currentIndex++
+			k = k - 2
+			return HighestPalindromeRecursive(s, k, strArr, currentIndex, maxLoop)
+		} else {
+			currentIndex++
+			return HighestPalindromeRecursive(s, k, strArr, currentIndex, maxLoop)
+		}
 	}
 
 	return "-1"
