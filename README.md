@@ -6,4 +6,4 @@
 ## Penjelasan Soal ke 2 "Balance Bracket"
 - Ukuran Kompleksitas Balanced Bracket seharusnya paling minimum, karena:
     - Bracket ditentukan valid atau tidak adalah dengan cara menutup bracket setiap kali ditemukan pembuka bracket yang valid dan dihapus setiap kali bracket nya sudah tertutup.
-    - langkah demi lahgkah dapat dilihat di proses codingan  
+    - langkah demi langkah dapat dilihat di proses codingan  
